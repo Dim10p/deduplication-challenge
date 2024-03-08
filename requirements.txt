@@ -13,4 +13,5 @@ regex==2022.10.31
 fuzzywuzzy==0.18.0
 matplotlib==3.7.1
 python-Levenshtein==0.20.9
+pytest
 ipywidgets==7.5.0
