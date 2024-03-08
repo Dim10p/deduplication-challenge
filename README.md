@@ -1,4 +1,6 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+ ![Build Status](https://github.com/Dim10p/deduplication-challenge/actions/workflows/unit-tests.yml/badge.svg)
+
 # Deduplication Challenge
 This repository tracks the codes for the [data deduplication](https://statistics-awards.eu/competitions/4#learn_the_details) challenge hosted by the Jožef Stefan Institute for Eurostat.
 
