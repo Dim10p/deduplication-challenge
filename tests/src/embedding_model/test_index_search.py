@@ -4,12 +4,24 @@ from src.embedding_models import EmbeddingModel
 from src.embedding_process.index_search import perform_index_search
 from src.utilities.constants import DataDimensions
 
-distiluse = EmbeddingModel('distiluse', max_seq_length=100)
-minilm = EmbeddingModel('minilm', 100)
-xlm = EmbeddingModel('xlm', 100)
-mpnet = EmbeddingModel('mpnet', 100)
+MODELS = ["distiluse", "minilm", "xlm", "mpnet"]
 
-EMBEDDING_MODELS = [mpnet, distiluse, minilm, xlm]
+
+@pytest.fixture()
+def language_model(model: str) -> EmbeddingModel:
+    distiluse = EmbeddingModel('distiluse', max_seq_length=100)
+    minilm = EmbeddingModel('minilm', 100)
+    xlm = EmbeddingModel('xlm', 100)
+    mpnet = EmbeddingModel('mpnet', 100)
+
+    models = {
+        "distiluse": distiluse,
+        "minilm": minilm,
+        "xlm": xlm,
+        "mpnet": mpnet,
+    }
+
+    return models[model]
 
 
 def compute_output(input_data, language_model):
@@ -61,7 +73,7 @@ def get_input_data(n_title: int,
 
 
 @pytest.mark.slow
-@pytest.mark.parametrize("language_model", EMBEDDING_MODELS)
+@pytest.mark.parametrize("language_model", MODELS, indirect=True)
 def test_whether_different_input_length_of_equivalent_information_gives_same_results(language_model: EmbeddingModel):
     input_data_short = get_input_data(n_title=1, n_text=1)
     results_short = compute_output(input_data_short, language_model)
@@ -73,7 +85,7 @@ def test_whether_different_input_length_of_equivalent_information_gives_same_res
 
 
 @pytest.mark.slow
-@pytest.mark.parametrize("language_model", EMBEDDING_MODELS)
+@pytest.mark.parametrize("language_model", MODELS, indirect=True)
 def test_whether_different_order_in_sentence_gets_same_result(language_model: EmbeddingModel):
     input_data_short = get_input_data(
         n_title=1,
