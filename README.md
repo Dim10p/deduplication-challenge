@@ -9,7 +9,7 @@ The main file is a jupyter notebook that calls all other methods: [`main.ipynb`]
 
 The dataset made available by Eurostat includes the following fields:
  - **ID**: The unique OJA identifier. It is attributed by the Organisation committee.
- - **Job title. The title of the job, retrieved directly from the website.
+ - **Job title**. The title of the job, retrieved directly from the website.
  - **Job description.**: The description of the online job advertisement, retrieved directly from the website.
  - **Job location**: The place where the job is to be held, extracted automatically from the job description by the WIH.
  - **Country ID**: The country ID of the job position derived from the job location.
