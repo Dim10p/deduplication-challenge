@@ -32,7 +32,7 @@ The repository is structured as follows:
  - [`data`](data/) contains all input, intermediate and output data
  - [`src`](src/) contains all the source code
  - [`tests`](tests/) contains the unit tests
- - [`assets`](assets/) contains details of our methodology for ensuring reproducibility.
+ - [`assets`](assets/) contains details of our methodology for ensuring reproducibility
  - [`main.ipynb`](main.ipynb) is a wrapper jupyter notebook to call all functions and build the final data set
  - [`requirements.txt`](requirements.txt) contains the requirements for the project
 
